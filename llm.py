@@ -158,48 +158,48 @@ Description: {c['description']}
 # --------------------------------------------------
 
 def build_subject_prompt(subject_list):
-    return f"""
+        return f"""
 You are a university academic advisor.
 
 Your job:
 - Ask the student about their academic interests, career goals,
-  experience level, and preferences.
+    experience level, and preferences.
 - Ask ONE question at a time.
-- Ask NO MORE than 5 total questions.
+- Ask AT LEAST 4 questions, and NO MORE than 5 total questions before making a recommendation.
 
-After gathering enough information,
+After gathering enough information (minimum 4 questions),
 choose the MOST appropriate subject code from the list below.
 
 Respond ONLY in JSON.
 
 If you need more information:
 {{
-  "decision": "ask",
-  "question": "<your question>"
+    "decision": "ask",
+    "question": "<your question>"
 }}
 
-If ready to choose a subject:
+If ready to choose a subject (only after at least 4 questions):
 {{
-  "decision": "choose_subject",
-  "subject": "<exact subject code from list>"
+    "decision": "choose_subject",
+    "subject": "<exact subject code from list>"
 }}
 
 Available subject codes:
-{", ".join(subject_list)}
+{', '.join(subject_list)}
 """
 
 
 def build_recommendation_prompt(course_text):
-    return f"""
-Based on the student's previous answers,
-choose the BEST course from the list below.
+        return f"""
+Based on the student's previous answers and any feedback about previous recommendations,
+choose the BEST course from the list below. If the student rejected a previous course, do NOT recommend it again and use their feedback to improve your next suggestion.
 
 Respond ONLY in JSON:
 
 {{
-  "decision": "recommend",
-  "crse_id": "<crse_id>",
-  "reason": "<clear explanation tied to the student's goals>"
+    "decision": "recommend",
+    "crse_id": "<crse_id>",
+    "reason": "<clear explanation tied to the student's goals and feedback>"
 }}
 
 Courses:
@@ -226,9 +226,7 @@ def run_advisor():
 
     # -------- STAGE 1: SUBJECT SELECTION --------
     while question_count < MAX_QUESTIONS:
-
         response = ask_llm(messages)
-
         try:
             parsed = json.loads(response)
         except:
@@ -239,13 +237,16 @@ def run_advisor():
         if parsed["decision"] == "ask":
             print("\nAdvisor:", parsed["question"])
             user_input = input("You: ")
-
             messages.append({"role": "assistant", "content": response})
             messages.append({"role": "user", "content": user_input})
-
             question_count += 1
-
         elif parsed["decision"] == "choose_subject":
+            if question_count < 4:
+                print("\nAdvisor: Please ask at least 4 questions before making a recommendation.")
+                # Force LLM to ask more questions
+                messages.append({"role": "assistant", "content": response})
+                messages.append({"role": "user", "content": "Please ask me more questions before recommending a subject."})
+                continue
             chosen_subject = parsed["subject"]
             print(f"\n📚 Subject Selected: {chosen_subject}")
             break
@@ -270,35 +271,50 @@ def run_advisor():
         "content": build_recommendation_prompt(course_text)
     })
 
-    final_response = ask_llm(messages)
+    rejected_courses = set()
 
-    try:
-        parsed = json.loads(final_response)
-    except:
-        print("Invalid JSON in recommendation stage:")
-        print(final_response)
-        return
+    while True:
+        final_response = ask_llm(messages)
+        try:
+            parsed = json.loads(final_response)
+        except:
+            print("Invalid JSON in recommendation stage:")
+            print(final_response)
+            return
 
-    if parsed["decision"] == "recommend":
-        crse_id = parsed["crse_id"]
-        reason = parsed["reason"]
+        if parsed["decision"] == "recommend":
+            crse_id = parsed["crse_id"]
+            reason = parsed["reason"]
+            match = next((c for c in subject_courses if c["crse_id"] == crse_id), None)
 
-        match = next(
-            (c for c in subject_courses if c["crse_id"] == crse_id),
-            None
-        )
+            print("\n✅ Recommended Course\n")
+            if match:
+                print(f"{match['subject']} {match['catalog_nbr']} — {match['title']}")
+                print(f"Units: {match['units']}")
+                print(f"Career: {match['career']}")
+                print("\nWhy this course?")
+                print(reason)
+            else:
+                print("Course ID:", crse_id)
+                print(reason)
 
-        print("\n✅ Recommended Course\n")
-
-        if match:
-            print(f"{match['subject']} {match['catalog_nbr']} — {match['title']}")
-            print(f"Units: {match['units']}")
-            print(f"Career: {match['career']}")
-            print("\nWhy this course?")
-            print(reason)
-        else:
-            print("Course ID:", crse_id)
-            print(reason)
+            user_feedback = input("\nDo you want to take this course? (yes/no): ").strip().lower()
+            if user_feedback in ["yes", "y"]:
+                print("\nThank you! Good luck with your studies.")
+                break
+            else:
+                rejected_courses.add(crse_id)
+                print("\nAdvisor: Okay, let's try another recommendation. Please tell me why you don't want this course or what you would prefer instead.")
+                feedback = input("You: ")
+                messages.append({"role": "assistant", "content": final_response})
+                messages.append({"role": "user", "content": feedback})
+                # Refresh the system prompt to exclude rejected courses and include feedback
+                filtered_courses = [c for c in subject_courses if c["crse_id"] not in rejected_courses]
+                course_text = courses_to_string(filtered_courses)
+                messages.append({
+                    "role": "system",
+                    "content": build_recommendation_prompt(course_text)
+                })
 
 
 # --------------------------------------------------
