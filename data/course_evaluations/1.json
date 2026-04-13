@@ -1,0 +1,120 @@
+{
+  "course": "INTRO TO COMPUTER SCIENCE",
+  "course_id": "COMPSCI-101L-13L",
+  "instructor": "Violette Walker",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "I was able to develop a logic-based approach to problem solving with the tools of computer science through practicing with APTs and the textbook.",
+        "N/A",
+        "I learned new ways to approach problems and how to fix those problems. Some ways I learned to fix problems was by debugging as I had to learn to go back and reevaluate my code and fix it. All in all I learned: debugging, for loops, while loops, as well as if statements just to name a few examples of functions and methods that I learned to implement in order to write and fix code.",
+        "I have learned how to code both for assignments and for labs. I learned how to apply Computer Science knowledge to diverse fields and disciplines.",
+        "I did this for the other evaluation.",
+        "How to iterate through a loop, for loops, sorting",
+        "learned python and how to code also learned to debug and think critically when it comes to coding",
+        "CS Thinking Python Learning Sorting Learnings",
+        "I acquired knowledge regarding how computer science is like, especially the logic of python which was completely new to me. I acquired some extent of coding skills and problem solving skills. Learning a new coding language is just like learning another language with its own logic and syntax. I believe that I only have a rudimentary level of understanding for the python language.",
+        "My logical thinking was strengthened as well as my confidence and understanding of the course.",
+        "Basic knowledge of python"
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "The textbook and the APTs I thought were the most useful.",
+        "N/A",
+        "Having students complete a form during class helped ensure I was learning what was being taught during lecture. So i'd say to continue doing this as it ensures students are learning in lecture.",
+        "The instructor always included examples and was always very supportive during lectures and office hours",
+        "I did this for the other evaluation.",
+        "For lab, the TA's helped me learn how to work through Pycharm. I liked how they would walk us through the labs.",
+        "office hours were very helpful",
+        "There were helpful TAs for every single project. The lectures were alright and the reading quizzes helped a lot.",
+        "The TA office hours facilitated my learning the most. I don't think the textbook reading quizzes or the assignments are as helpful as the APTs. As I believe learning a new coding language is just like learning any other languages and it is impossible to learn a language without attempting to speak and communicate with it, I am very fond of the idea of learning Python from textbook without that many small practices. Overall, the TA office hours and the labs are very helpful in developing my skills, but the lecture is not as helpful.",
+        "All questions were welcomed and the instructors did a great job of clarifying any and all areas of confusion. During sessions we'd tackled between 2 and 4 problems or concepts and complete a google form to ensure a full understanding.",
+        "Discussion and sample questions."
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "11/25 (44%)",
+        "mean": 4,
+        "std": 0.89,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "APTs were the most stimulating to me.",
+        "N/A",
+        "The class was stimulating by constantly having difficult assignments as well as Apt's that students constantly had to finish.",
+        "The labs, the assignments and the examples in lectures made this class stimulating.",
+        "I did this for the other evaluation.",
+        "Lab was very boring and repetitive, but I don't think there is a way to make it more stimulating because it is very structured.",
+        "make lectures more engaging and less confusing",
+        "It could have more creative APT problems and have professors go over them during the lecture. Learning Python from the textbook is not the mostly intellectually stimulating way to learn a language.",
+        "The kahoot style session were a fun way to actively test our knowledge and understanding. More sessions like that, tp appease the competitiveness in the group while actively quizzing our understanding is more effective for me as a learner than someone explaining a concept to me.",
+        "The discussion part make the calss stimulating."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "11/25 (44%)",
+        "mean": 3.82,
+        "std": 1.08,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "11/25 (44%)",
+        "mean": 3.64,
+        "std": 0.81,
+        "median": 3
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "It's a lot of work, but if you keep up with it it's very rewarding.",
+        "N/A",
+        "The course may be challenging at times but when you complete an assignment you get a pleasure like no other.",
+        "This course is very helpful and the instructors are always available and supportive. I highly recommend this course especially to students that have no prior experience with coding.",
+        "I did this for the other evaluation.",
+        "It is a lot of work and harder than I anticipated for a 101 class. However, I had no experience going into this class so I may be a little biased.",
+        "good intro course to computer science and general coding",
+        "The course can be more time-consuming than you think and even though it's an introductory course, the speed of the course and the difficulty of the assignments and the exams can be proven to be quite challenging if you are completely new to CS. If you are a total greenhand to CS, then consider going to more TA office hours every week, this can be effective in contributing to success in this class.",
+        "A great course to take. I highly recommend.",
+        "A good intro class for students taking computer science."
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "11/25 (44%)",
+        "mean": 3.09,
+        "std": 1.04,
+        "median": 3
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "12/25 (48%)"
+      }
+    }
+  ]
+}

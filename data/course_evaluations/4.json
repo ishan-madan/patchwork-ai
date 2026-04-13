@@ -1,0 +1,146 @@
+{
+  "course": "COMPUTER ARCHITECTURE",
+  "course_id": "ECE-250D-001",
+  "instructor": "Tyler Bletsch",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "There is something intangibly beneficial to understanding how a computer works at its lowest levels. For example, I gained a deep appreciation for how strings are just arrays of characters, and how to leverage pointers for my own purposes when designing data structures. Additionally, I understood finally how computers work as an implementation of a Turing machine, which helped me understand the importance of computer clocks and the datapath for computations. Finally, I gained an appreciation for the expression that 'computers are just 1s and 0s'; of course, I knew computers used binary beforehand, but I understood far better how really it's a sequence of instructions with a defined length and defined syntax. Indeed, the ISA is a powerful tool for any architecture, which I learned to respect and appreciate.",
+        "- Coding in C - MIPS assembly language - Caching and the way memory works in a computer",
+        "I learned how to code in MIPS and C. I learned how to use finite state machines and Boolean logic to solve problems. I learned about the architecture of a computer, including the CPU, cache, virtual memory, etc.",
+        "I learned how to build a cpu, how caching works, how multiple cores work, some boolean algebra, assembly programming, c programming, how memory works, how the memory and cache work together etc.",
+        "We had lecture and recitation.",
+        "- I learned a lot more about C and assembly. - This was the first class I've taken that really seemed to show how we could use these skills in a real workplace. - I learned to not procrastinate and ask for help early.",
+        "MIPS, C, CPU design",
+        "insights on hardware, coding in C, and thinking outside the box.",
+        "High level languages hide a lot that you can see with C and MIPS, abstraction is cool, computers are hard",
+        "The ability to code in C and MIPS, the circuit design of CPUs, and the guidelines for processing computer memory.",
+        "How the whole computer is built from the ground up: 1) Computer Architecture regarding datapath design, memory, different hazards, different ways of incorporating architectures. 2) Learning C and Assembly 3) Learning how to use logism.",
+        "C Programming Language, MIPS, CPU, Memory",
+        "Coding in C, problem solving, circuit design, architecture.",
+        "Mips, C, Logism",
+        "How to make a cpu how to code in c how to debug or punch your laptop",
+        "How logical circuits are used to build a CPU. Understanding the process of how code in higher-level languages is executed by compiling to assembly code and assembled to machine code in bits. Writing and debugging programs in C and Assembly.",
+        "1. C programming 2. Assembly language (MIPS) programming 3. General information about how computers work"
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "Professor Bletsch kept an informal though elucidative throughout class, making him approachable yet still incisive. Additionally, he made extremely good metaphors for most concepts learned, which helped me fix them better. For future years, there is very little I would change about this class; it was extremely effective as is.",
+        "teacher provided an incredible amount of office hours and support to go along with homeworks, lectures are interesting and engaging, keep MIPS and CPU building :)",
+        "The lectures were engaging and well taught, and the amount of office hours support from the TA and professor was astounding. It's basically impossible to not finish an assignment if you use those wisely.",
+        "I think recitation was a huge part in facilitating my learning. Recitation material was helpful to supplement work on the home works. Further, the hands on help available in recitation was crucial to ensuring I had a solid understanding of everything I was doing.",
+        "We had homework assignments related to the lectures and assignments to give us a better grasp and experience on what we were learning.",
+        "The instructor and the structure of the course were very beneficial and allowed me to understand topics more thoroughly. I think all the analogies were really helpful to understand what was going on, so I would definitely keep that for future years.",
+        "Unbelievable class. The professor was engaging, enthusiastic, and really made the course and material exciting. This is the best ECE course I have taken thus far.",
+        "I think the fact that the material wasn't boring really facilitated my learning because I would go to class eager to learn about hardware and I'm not really into hardware.",
+        "Dr. Bletsch is a very engaging lecturer and I really learned enjoying about computer architecture.",
+        "I enjoyed that most of the class focused on the homework projects, as this was better for getting experience and learning through that experience than simply reading slides.",
+        "Amazing Course. Very well structured and teaches very interesting information constantly. The recitations are great for practice in order to actually understand the lectures.",
+        "The examples in the class helped a lot with making the complicated machinations related to each operation more understandable. The recitation and home works helped a lot in exercising what we learned in class. Overall, keep things as is.",
+        "The condensed timeline meant that material was always fresh in my mind, which was helpful for written analysis and exams. Timing meant that projects were difficult to complete.",
+        "Nope loved it!",
+        "The instructors examples were great. The slides are well made and the videos of past lectures are great for review.",
+        "Lectures were really engaging and often funny, while concepts were also explained really clearly. The course was also very well-structured, starting from C and moving into assembly, then the logic needed to build a CPU, and finally ways of improving the CPU. Recitations were also really helpful for applying the concepts learned in lecture and developing the skills needed to complete the homework. The homework, a good mix of challenge and interesting problems, was quite fun in general."
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "20/25 (80%)",
+        "mean": 4.7,
+        "std": 0.47,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "Professor was adept at introducing challenging concepts through a challenge (like his Quake 3 algorithm in the first class). Additionally, he would often preface hard concepts with a birds-eye view of what we were doing, so we would not get stuck in the weeds.",
+        "intense assignments that solidified lecture content!",
+        "The projects required a lot of independent thinking and debugging, which was super stimulating. I don't know what I'd change to make it more stimulating. Maybe more quizzing in lectures because I admittedly was zoning out because I sort of knew I'd be allowed to. The candy helped with that.",
+        "The material of the class was what was most simulating. Being able to learn about and then build your own cpu was as truly fascinating and visceral experience.",
+        "Group activities?",
+        "It was very stimulating because it was necessary to always pay attention during class to actually understand what was going on.",
+        "I think the fact that you get to build your own CPU made the class stimulating.",
+        "Removing the magic from everything reveals a lot",
+        "One thing that made the class stimulating was the ability to see how a computer works going down to the basic transistors that make up the CPU.",
+        "The content is what mainly made this class intellectually stimulating.",
+        "Lots of applicable content",
+        "Not sure",
+        "The fulfillment you get from all green. Better than ...",
+        "I think it would've been interesting to try and implement some of the concepts that we learned for improving the CPU, such as pipelining, into the CPU that we built ourselves.",
+        "The assignments made me learn the basics of two new programming languages and figure out how to actually debug programs on my own."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "20/25 (80%)",
+        "mean": 4.65,
+        "std": 0.49,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "19/25 (76%)",
+        "mean": 4.84,
+        "std": 0.37,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "The course is not easy, but is fair and straightforward and if you allocate an appropriate amount of hours a week to it, you'll both do well and also learn a lot and mature. It's a surefire hit.",
+        "This course is incredible, it will take you a significant amount of time, but it is rewarding and worth it. Start early, go to lecture, GO TO OFFICE HOURS, and you will have a blast.",
+        "Start early on HW. Reference the slides.",
+        "I would say you should definitely take this course over CS 210. From what I've heard about 210 and the differences, applying the theoretical knowledge of the insides of a computer is an awesome experience and much more rewarding than not. Everything about computation just makes so much more sense after taking this class.",
+        "Take it but actually go to lecture. Maybe review the material beforehand? Don't get behind.",
+        "Start the homework early and do not be afraid to ask for help.",
+        "Take it",
+        "Take it with Bletsch. He gives candy!!!",
+        "If you stay on top of the homework early the course is very doable, otherwise you're screwed",
+        "I would say that homework should be started early, as many previous students have said, but also that students should go over all of the linked videos and read through the assignment thoroughly before starting, as this will help avoid mistakes down the line.",
+        "Start on Projects early!!! You will have a great time.",
+        "Start the home works early. Take it easy and pay attention in the class. Don't be intimidated by what other students might tell you about CS250.",
+        "It's difficult but definitely worthwhile",
+        "Such a fun class",
+        "Start thinking about homework early. Ask for help and you don't need friends.",
+        "This is a very interesting course if you have any interest in computers, and you will come out of it with a better understanding on how a computer actually works behind the scenes. As long as you attend lecture/recitations and get started with the homework early, it is a very manageable course that is also quite rewarding.",
+        "For me, a ranking of the homework assignments in descending order for the time it took me to complete them outside of recitation would be homework 2 MIPS PizzaCalc.s (~35 hours) >>> homework 5 CacheSim (~15 hours) > homework 4 Logisim CPU (~12 hours) ~= homework 1 PizzaCalc.c (~12 hours) >>> homework 3 Logisim Finite State Machine (~3 hours) > homework 0 (~2 hours) TLDR: Start homework 2 before the first day of class"
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "19/25 (76%)",
+        "mean": 3.84,
+        "std": 0.76,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "19/25 (76%)",
+        "mean": 8.74,
+        "std": 1.45,
+        "median": 10
+      }
+    }
+  ]
+}

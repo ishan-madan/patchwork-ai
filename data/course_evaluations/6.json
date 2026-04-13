@@ -1,0 +1,137 @@
+{
+  "course": "ADVANCED COMPUTER NETWORKS",
+  "course_id": "COMPSCI-514-01",
+  "instructor": "Bruce Maggs",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "Knowledge: fundations of computer networks. For example, the Internet is developed under the assumption that packet loss is acceptable, and that cost has dominated the design of many things during the growth of it. Also I learned a lot of how distributed system works.",
+        "Understanding network protocols, thinking about packet routing, analyzing impact of past or proposed changes to network architecture/specifications",
+        "1. tcp handshake 2. authentication and certificate 3. peer network",
+        "The knowledge of computer networks, including various protocols, and algorithms used for distributed system.",
+        "1. Computer network design strategy. 2. Security issues in the computer network and internet.",
+        "How the internet works How CS theory can be useful in network / protocol design The main reason choices are made in the real world despite being sub-optimal in terms of performance.",
+        "Different types of network What to consider when designing the upper level structure for network Interesting networking tricks",
+        "tcp flow control, distributed system, routing",
+        "The overall view of computer network.",
+        "Network fundamentals, routing and switches.",
+        "I learned many network protocols.",
+        "1. Fundamental knowledge of computer network: OSI model, TCP/IP, SMPT, HTTP, CDN, BGP, ...... 2. Hands-on experiment of computer network: Use wireshark to analyze http request/response, Routing simulation under Mininet, Certificate Signature Simulation, ...... 3. State-of-the-art research topics of computer networks: Raft, Bitcoin, Peer-to-peer Network model, P4, ......",
+        "Networks & Distributed Systems designs and implementations",
+        "network in general",
+        "Concepts of computer network",
+        "The basic idea of how network works."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "video recording, well constructed homework",
+        "Lots of examples and stories to illustrate the concepts, which helped when they were confusing",
+        "The instructor is good at teaching and using jokes helping us to better understand the new information. And I feel the homework and lab are designed so great in reviewing and further self-learning. And the recording really helps, it is hard to note down everything during the class but review based on recording is efficient.",
+        "The structure of the course.",
+        "The lecturer is enthusiastic. The homework (both the written and the lab) is relevant to the lecture.",
+        "I attended lecture, but still the recorded lectures were very helpful.",
+        "programming assignments are helpful",
+        "Maybe the way combining experience with lectures.",
+        "Labs and slides.",
+        "I feel that the two programming assignments are great and should be kept. However, I feel that the first one is not closely related to the course content and should be modified.",
+        "First, the overall learning environment is neither stressful nor over-loaded, which provides me with opportunity to play with different topics of computer networks instead of struggling with the deadlines. Additionally, unlike many other course I took at Duke, the experiments, homework and lectures of cs514 are highly related, helping me better understand the necessary concepts.\n\nI got solid foundation of computer network knowledge from this course.",
+        "Examples, are coding labs, and interaction with networking tools.",
+        "The recordings are really useful for study and review.",
+        "The labs and assignments are well designed based on the lectures."
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "33/69 (47.83%)",
+        "mean": 4.33,
+        "std": 0.69,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "N/A",
+        "Stories from the development of the modern Internet, Akamai, etc. that applied class concepts to real history",
+        "The network itself is a good topic to learn and Bruce is so energetic and cute, love him.",
+        "The content of the course.",
+        "The lecturer is good at storytelling.",
+        "I would appreciate more labs for a hardcore course like that",
+        "The experiences are the most stimulating part.",
+        "More programming labs and less or shorter written assignments",
+        "I think having more programming assignments instead of written assignments will be more stimulating.",
+        "Course is well designed and professor's insightful understanding about computer network is enlightening.",
+        "The real work examples and moderns distributed systems like bitcoin",
+        "The support from TA and instructor is very good.",
+        "The coding part definitely! And the final project giving us the opportunity to build something we learnt from the class."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "33/69 (47.83%)",
+        "mean": 4.3,
+        "std": 0.68,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "33/69 (47.83%)",
+        "mean": 4.45,
+        "std": 0.62,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "Get involved, all thing covered are useful for your daily life",
+        "Make sure to attend lectures and not get behind",
+        "Take this course to explore further into the network and Bruce is awesome!",
+        "The course could help students who intend to gain advanced knowledge about the computer network.",
+        "The course focuses equally on the computer network mechanism and its security issues. Be prepared to think about the possible vulnerability and the corresponding solution during the semester.",
+        "not quite what I expected in the first place but still learned a lot.",
+        "Wonderful for students who are interesting with computer network and just started in this area.",
+        "Moderate difficulty, very important topics in CS",
+        "If you are interested in learning a lof of network protocols, you should take this course.",
+        "Take it!",
+        "Great course for a well-rounded understanding of the history of the internet and distributed systems.",
+        "Learn basic concepts in advance and pay attention to recordings/lectures.",
+        "Good choice! Congrats!"
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "33/69 (47.83%)",
+        "mean": 3.33,
+        "std": 0.74,
+        "median": 3
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "31/69 (44.93%)",
+        "mean": 5.97,
+        "std": 2.12,
+        "median": 6
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "course": "TOPICS IN COMPUTER SCIENCE",
+  "course_id": "COMPSCI-290-01",
+  "instructor": "Pardis Emami Naeini",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "How to design studies in the human-computer interaction field, how to effectively acquire and present information from research papers + a lot of stuff about modern research topics of interest in the field",
+        "interesting about privacy and security, lots of research articles read",
+        "I learned how to read research papers, conduct research, and conclude findings from research.",
+        "I wish I took this class before STA199 and STA210! The second half of the semester explained all the conceptual work behind those classes so well. The first half was also applicable to many life skills and I understand far more about user research in general - I find myself applying my knowledge to other classes that discuss experiments, research papers, studies etc.",
+        "1. Conduct ethical research 2. Learned about new developments in technology and their privacy/security risks 3. Learned more about conducting research and the considerations that go into a study",
+        "I learnt more about privacy and security in computer science How to survey an application or feature to a population How to consider marginalized/non-WEIRD groups in a technology context",
+        "User research methods, how to conduct HCI research, quantitative and qualitative methods in assessing significance.",
+        "I learned a lot about the creation of user research methods, the things that you need to consider when conducting user research, and general security/privacy concerns in technology.",
+        "It helped me refresh my statistics skills because I will be taking STATS 210 and it has been a while since STATS 199.",
+        "- User research methods - Survey / interview design - Applying statistical tools in real research topics",
+        "I learned how to conduct research studies, analyze data, and ensure the research is ethical.",
+        "- I learned how to conduct quantitative and qualitative analysis - I learned how to critically read and analyze HCI research papers - I learned how to thoughtfully construct a survey instrument to be used in user research method papers",
+        "This course allowed students to read and discuss different ethical components of research being performed in the computer science community. From this course, I learned to think critically about the security aspects of different technologies.",
+        "I learned how to critically analyze research papers centered around human computer interactions. I learned how to conduct a research project in its entirety, and communicate findings and ideas effectively.",
+        "This class taught me so much! I specifically developed a better understanding of conducting any research, important ethical guidelines to consider, and learned new skills like developing a codebook or analyzing research. I believe this course should be widely considered for any students in the department before conducting research because there were so many skills I wish I had employed before conducting research in previous courses. There were topics I also took home with me to tell people outside of the class like my parents how even medical devices could be hacked or how inclusivity is one of many ethical considerations that should be prioritized.",
+        "I learned a lot about survey creation and user interaction as well as privacy concerns. I also learned how very small details can change the entire user experience."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "The instructor was very compassionate and understanding, facilitating a very safe and comfortable environment in the classroom. I really enjoyed being exposed to a lot of papers since I feel like other CS classes rarely touch on things that are happening in the academic field right now.",
+        "great lecuturer, incredible human",
+        "The instructor lectured twice a week, and students read two research papers before each class period. Students also worked on a group research project throughout the semester. I would keep the course how it is for future years.",
+        "I liked the weekly forum posts, the midterm was helpful to review material we learned, and the project is great for actually practicing skills we learned in class in real life.",
+        "I think the instructor was very sweet and kind. She always wanted to help you and was very responsive to questions, so I really liked that. She was a great teacher. I think some parts of the course that helped were when the course was more interactive (when she asked us questions to quiz us, etc). We didn't have that much work too.",
+        "The professor herself is very kind and understanding and is passionate about the material, which makes the class more engaging.",
+        "I think the class activity are helpful in staying engaged and I think the reading assignments are very helpful in guiding my group projects as well.",
+        "I really enjoyed all of the readings that we did because they were very interesting studies and informed a lot about the structure of user research and the issues that are currently plaguing the technological field. I would keep these readings and the discussion-style.",
+        "I liked how we engaged with current HCI papers out there to go hand in hand with the topic for the week.",
+        "- Assigned papers were interesting to read - Professor Emami-Naeini is a great professor, very caring and understanding for all the students - Presentation is a great way to reinforce the knowledge and learn from other peers",
+        "The discussion leads were a good way of allowing everyone to present in front of the class on a topic.",
+        "Professor Emami Naeini was incredible! She was so kind and thoughtful. She kept the class engaging while also understanding that we are students with many demanding facets of our lives. She was incredibly accessible by Ed, email, and in-person during her office hours and after class. She explained everything very thoroughly. I also appreciated her emphasis on IDEA (inclusivity, diversity, equity, and accessibility) concepts, which were baked into all of the course material.",
+        "The readings and student chats were extremely interesting and engaging to talk with others about the material. It helped me think about other's perspectives when talking about security practices.",
+        "I very much enjoyed the presentations/lead discussions that students had to do throughout the semester. It made it less overwhelming to be the expert of just one paper, and also made the class feel more collaborative.",
+        "It's an essential booster to students' learning to expose them to fascinating research done by so many researchers, conducting our own research on an interesting topic, and pick our own research papers to present to the class. I loved reading the DualCheck paper for the Critique Day I hosted and the TikTok project research I completed. Considering the class's engagement, it showed how interested people are in topics they understand or could find a relation to something they already experience whether it is reCAPTCHA or SNS platforms. I also enjoyed learning from other students like the Animals and HCI intersections.",
+        "The presentations facilitated active learning. I would also say the professor was extremely nice, and had a genuine passion for her job, and ensuring that her students were learning"
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "17/59 (28.81%)",
+        "mean": 4.41,
+        "std": 0.62,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "Most of the information we learned was immediately applicable to the real world",
+        "the professor was icnredible, and very passionate about the subject",
+        "The professor was very enthusiastic and explained concepts well, which made class stimulating.",
+        "The Professor is well-spoken, and her slides give great examples.",
+        "I learned about new developments in technology and we had engaging discussions about tech, the risks, and ethics. We were also encouraged to think about our own research (which we do a paper on later) and had to think about how to answer research questions.",
+        "N/A",
+        "The course covered not only technical components of conducting HCI research, but also ethical ramifications as well, which I think it is very great and would love to see in other computer science courses as well.",
+        "This class was stimulating because it made me think of security/privacy concerns in a way I had not considered. It was also stimulating because it made me reconsider the difficulty of making user studies.",
+        "The content made this class stimulating.",
+        "NA",
+        "The homework got very repetitive and tedious to complete. I wonder if there would be a way to change up the format to keep it fresh and interesting.",
+        "The class was stimulating because I'd never been exposed to a research-specific CS course before during my time in the major.",
+        "This class was stimulating because the professor was inviting. The slides were extremely helpful and made students participate which kept us engaged.",
+        "Pardis is a phenomenal lecturer and I enjoyed the discussions from the beginning of the course. I was able to absorb so much knowledge without being frustrated by grades or other abstract processes that typically cloud a course's potential to impact students. The topics for the research papers were overall fascinating as well as the topics covered in lectures. I looked forward to class because of how much I enjoyed learning new things."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "17/59 (28.81%)",
+        "mean": 4.47,
+        "std": 0.62,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "17/59 (28.81%)",
+        "mean": 4.82,
+        "std": 0.39,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "amazing course, one of the very few available in the UX field at Duke",
+        "the best professor ever",
+        "I would recommend this course! The professor is super nice and cares about her students, and the class is not very workload heavy.",
+        "Yes! Super helpful to real world applications.",
+        "If you're taking CS290 User Research Methods with Prof Pardis Emami-Naeni, I think you should stay in it because it's a pretty easy class that is also interesting! The midterm was pretty easy, she gives a lot of extra credit, and she's very sweet, and most of the grading is based on weekly very easy commentaries on papers.",
+        "Professor Emami-Naeini is wonderful and very sweet and passionate about the subject. Moreover, the grading is very easy and could be considered an easy-A. The subject itself can be interesting as well.",
+        "Definitely recommend taking this class, it has a great workload and the semester projects has clear deadlines.",
+        "Take this class! The class is very interesting, and Professor Emami Naeini is an amazing professor/person! They really manage the class well and have interesting insights in this field.",
+        "Come with an open mind for your research topic and paper.",
+        "- It's evident that Professor Emami-Naeini put a lot of efforts into the design of the class and she presented every lecture the best she can",
+        "This was an interesting course to take because it was very different from all other computer science classes I've taken before. Much more qualitative than quantitative.",
+        "If you're genuinely interested in research, find a good group for the research project!",
+        "It is a great computer science elective for those who care about the social aspect of it all.",
+        "Please take this class if you ever think about conducting or utilizing research! It is very beginner friendly and you will leave this course with incredible insights into ethics and technology. This is a great course for any curious individuals who want to know more about intersections technology makes with society."
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "17/59 (28.81%)",
+        "mean": 2.06,
+        "std": 0.75,
+        "median": 2
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "17/59 (28.81%)",
+        "mean": 3.12,
+        "std": 1.17,
+        "median": 3
+      }
+    }
+  ]
+}

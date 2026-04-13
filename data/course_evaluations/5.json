@@ -1,0 +1,142 @@
+{
+  "course": "COMPUTER & INFO SECURITY",
+  "course_id": "ECE-560-01",
+  "instructor": "Tyler Bletsch",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "1. The basic networking knowledge needed for computer security 2. Fundamentals of cryptography 3. Basics of offensive security",
+        "Understanding mindset of attacker and defender in security, network security practices, understanding/identifying vulnerabilities",
+        "Exciting course with a lot of knowledge gained. I would recommend this course to anyone pursuing security",
+        "Computer security. Computer network. buffer overflow.",
+        "Bash script. Varity of vulnerabilities. Firewall.",
+        "Learned a great deal about security starting with the CIA triad, threat models, and defenses as well as applications of computer networks, cryptography, and malicious software to security.",
+        "Security, network and programming skills",
+        "I learned the threat model to analyze the scenario, many encryption and decryption methods, some attack functions and defend functions.",
+        "Computer Network cryptography Reverse Engineering techniques",
+        "I learned methods of attacks, common ways of conducting and monitoring attacks, and how to protect passwords.",
+        "Cryptography knowledge Security tools Command line and script in Linux system",
+        "Professor Tyler is an excellent teacher, his well-designed homework teach me a lot about how to use my creative thinking to solve the problem. I appreciate all the effort he has put into this course.",
+        "I learned a lot of technical skills, which I had to practice weekly for the homeworks. I also learned a lot of concepts about networking and security. I have a deeper understanding of the workings behind everyday things",
+        "overflows and counter, intrusion detection and prevension, human/social factor of computer security",
+        "All about Information/Computer security. Every single HW was greatly organized to learn about the topic.",
+        "A lot. In terms of topics, reverse engineering, intrusion detection/prevention, security auditing, human factors and social engineering are kind of new to me. Most importantly, I think learning and practicing a lot of skills and the use of various tools in the homework is really useful and practical.",
+        "Things related to security, such as cryptography, network security, buffer overflow.",
+        "How to catch a reverse shell Some useful linux commands: awk, objdump, strings, hd, ifconfig, nc, netstat, etc. Use wireshark to catch packages",
+        "It is a comprehensive overview of the security. I started to be aware of security issues when I wrote my programs."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "The homework problems are fantastic. They really helped me improve my understanding of the content.",
+        "Hands-on assignments, demos during lecture, funny/engaging lectures",
+        "The instructor is very engaging.",
+        "The professor's engaging lectures and encouragement of student questions made it possible to engage closely with the material in class. The fun steps to access assignments made each homework feel like a reward, and the assignment questions were mostly very practical and either involved gathering useful data into one location which provided another look at the material and made it easier to review or it was an applied activity that would give full immersion in the topic at hand or a combination of previously explored topics. Very good organization, and the assignments are especially good.",
+        "Tyler facilitates us by handing out candies to students who put up more questions. He also explains the slides very thoroughly by giving us practical examples and this motivates our interests in this course. The commands and expressions used in Linux enviorment are very useful and I would like to keep for future years.",
+        "The professor is cute and the class environment is perfect!",
+        "Tyler is a great instructor who knows how to engage students. More importantly, he is energetic, talks fast and conveys a lot of dense information in class, while also makes enough metaphors to make things clear for students. Candies are also much appreciated. Also the look for homework part is quite fun.",
+        "I'm better at coding with the command line. I have better understanding over the cryptographic knowledge that we used every day. I pay more attention to the security stuffs especially for password.",
+        "The homeworks are primarily how I learned things. I think the lectures could have been more interactive (like, get on your computer and type this into your terminal) but maybe that would take too much time",
+        "most of the homework is fun. particualrly the buffer overflow homework.",
+        "Virtual machine based HW was great experience. Since Dr. Tyler built its environment for course already, students could concentrate on their own study. It was exceptionally awesome.",
+        "Candies! Also I like the way the teaching is done. I can learn a lot more things by attending the lectures rather than just reading the slides.",
+        "The instructor organize the whole course very well and is very responsive on answering questions, which is good.",
+        "Interesting assignments! These are the most interesting assignments I did so far.",
+        "The assignments are fabulous!!"
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "27/55 (49.09%)",
+        "mean": 4.59,
+        "std": 0.69,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "Application of concepts and security mindset in challenging real-world situations",
+        "Prof. Tyler is the key to success for this course.",
+        "It was stimulating because the material was very practical, the professor engaged the students, and the homework was enjoyable and really useful.",
+        "This course always brings me new thoughts and I really learn a lot from the course.",
+        "Everything taught in this class is funny.",
+        "Tyler",
+        "1. Tyler gave the lecture with real passion, which keep me engaged. 2. The homework questions are well designed.",
+        "Thinking creatively to solve homework problems made the class stimulating intellectually",
+        "real scenarios showcasing concepts",
+        "Even though I already have 10 years field experience of cybersecurity, every single lecture was stimulating me effectively.",
+        "The teaching style is great",
+        "I think the assignments, especially those 'real' attacks are stimulating.",
+        "NA"
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "29/55 (52.73%)",
+        "mean": 4.66,
+        "std": 0.72,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "29/55 (52.73%)",
+        "mean": 4.62,
+        "std": 0.73,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "I would recommend this course to anyone looking to work on software engineering, machine learning, or any other field related to computers. This course is extremely well-taught and enjoyable. Highly recommend.",
+        "Start the work early and make sure to ask questions in class if you're confused",
+        "Definitely take it. Some topics can be difficult at first and it takes a lot of time, but there are lots of opportunities for extra credit. Definitely a class to attend all lectures and start the homework as soon as its assigned. Useful and practical content even if you do not plan to go into the security field directly.",
+        "Tyler is great teacher who devotes his most of time and enthusiam in the teaching. You won't regret if you choose this course.",
+        "The course is challenging and not easy to follow up if you don't have any knowledge in this field. Apart from that, the course is really interesting and you are guaranteed to have a lot of fun when you overcome challenges one by one.",
+        "Definitely take it! But expect it to be a challenging course where you would need to spend time on.",
+        "Just take it. Don't hesitate.",
+        "Spend time on the homeworks",
+        "fun, engaging, relatable to other fields. most fun I had from a class. 10/10",
+        "If she(he) want to learn about cyber/information/computer security, it should be not missed to take this course for her(him).",
+        "A great course in which you can learn and practice a lot of things. The workload can be a bit heavy, but it’s bearable and the homeworks are useful.",
+        "If you are interested in security I recommend taking this course.",
+        "Just go for it. One of the most interesting courses I have ever taken",
+        "Just take it. We Love Tyler!!"
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "29/55 (52.73%)",
+        "mean": 3.45,
+        "std": 0.87,
+        "median": 3
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "28/55 (50.91%)",
+        "mean": 8.29,
+        "std": 1.61,
+        "median": 8
+      }
+    }
+  ]
+}

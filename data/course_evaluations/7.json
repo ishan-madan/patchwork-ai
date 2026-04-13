@@ -1,0 +1,172 @@
+{
+  "course": "ADVANCED COMPUTER NETWORKS",
+  "course_id": "COMPSCI-514-01",
+  "instructor": "Xiaowei Yang",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "- TCP in depth overview - Paper Reading - Implementing high level protocols",
+        "TCP congestion control Fair Queuing Remote Direct Memory Access Content Distribution Networks ...",
+        "1. A board understanding of the latest network research. 2. Many network (system) design principles. 3. How fragile the network is.",
+        "Learned how to analyze scientific papers (related to networking) and dove deep into networking concepts like Internet architecture, communication protocols, and distributed networks.",
+        "I gained a broad overview of network science. This included learning how to think critically and fully utilize core principles including:\n\n- Hierarchical Network Design - End-to-End Network Design - Software Defined Networking",
+        "Reading professional papers, having a deep understanding of the network, and having a better understanding of Wireshark",
+        "In this course, I developed a comprehensive and practical understanding of how modern networks operate from end to end. First, I deepened my knowledge of foundational protocols such as TCP congestion control, DNS resolution, and reliable data delivery, and gained insight into why design decisions were made. Second, I learned advanced network architectures including BGP routing, Anycast, CDNs, datacenter network topologies, and scalable key-value systems like DHTs—connecting theory directly to systems deployed on today’s Internet. Finally, through reading and discussing research papers, I learned how to critically evaluate real-world performance challenges and design trade-offs, strengthening my ability to reason about cutting-edge networking problems with a systems-thinking mindset.",
+        "I learned quite a bit about TCP and, more generally, how congestion control is done in a modern network. The second thing I learned about is routing in networking; in particular, I understand now a lot better how packets find their way across the Internet. The third thing I learned is about data centers. I now understand a lot better how the machines are organized in a data center.",
+        "This course fundamentally changed my perspective on how modern networks are architected, especially concerning data center topology and resource allocation. My primary takeaway was mastering the methodology of network measurement and performance analysis, translating academic papers into practical implementations. Three specific skills I gained were: utilizing BGP routing policies for traffic engineering, programming with P4 for packet processing, and analyzing large-scale network trace data.",
+        "Knowledge: Congestion control, DCTCP, p2p approaches, IP anycast, etc. see [https://courses.cs.duke.edu/fall25/compsci514/\n\nSkills](https://courses.cs.duke.edu/fall25/compsci514/\n\nSkills): Better reasoning about networks; greater appreciation for hierarchy and indirection",
+        "I didn't feel that the class required a lot of critiacl thinking, mostly just getting to know lots of algorithms and network structures.",
+        "various understanding of network ideas.",
+        "1. I learned how to methodically read research papers and internalize the core findings 2. Learned a lot about computer networks and specific internal mechanisms 3. Learned how to conduct research on a small scale",
+        "understanding all industry standard Networking concepts",
+        "Congestion control, reading papers, data center networks.",
+        "Networking design philosophies, academic paper reading, socket programming",
+        "How to apply thins practically. How to go deep into reading. And some different theories and comparison.",
+        "This course starts with historically relevant networking designs including basic TCP congestion control algorithms, routing and switching behaviors, and expands into modern topics like data center and global networking challenges. This class has a focus on research topics and research paper techniques that you may not find in a course focused on practice. The end of the course is a small-scale group research project which helped me enhance my capabilities in academic research (including paper publishing, LaTeX, and presenting)",
+        "TCP congestion algorithms, rdma, bgp",
+        "- tons of stuff about advance networkss - cloud computing stuff - applicantion layer stuff like DHT, CDNs",
+        "I learned to think more about system design and networking",
+        "Broad understanding of computer networks, experience conducting research in the field, and experience reading influential papers in the field.",
+        "resource sharing, routing, data center networks, why systems are designed the way they are",
+        "This course covered the full spectrum of networking, tracing its evolution from its origins to its modern-day applications. The breadth of the content was impressive."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "I think it was good in the reading material was useful, and the overview of the paper in class brought everything together.",
+        "The instructor created a very supportive learning environment, and the structured weekly assignments and clear explanations helped me stay on track.",
+        "The reading requirement is helpful. The overall organization is quite great (very comprehensive), covering several important topics that help me understand the latest development of the network research.",
+        "The paper readings were interesting and well-aligned with lecture. The problem sets were helpful in preparing for quizzes, as well as the practice exams.",
+        "Professor Yang made us think through each topic in the course syllabus. This came from reading relevant academic/industry publications as well as completing homework/labs. The labs, in my opinion, proved to be the best part of the class. I would keep the learning model the same for future classes.",
+        "Before class, the professor will provide the papers first, and we can have a normal understanding, which is good for us.",
+        "The lectures and discussions provided strong conceptual grounding, and the homework assignments were especially effective in helping me apply the material and solidify my understanding of complex networking concepts.",
+        "I think I learned a decent amount in this course. The lectures helped; they were mostly good throughout the semester. I also think the labs helped my understanding a bit. The exams were fair. Overall, I don't think I would change the structure of the class. I would pretty much keep all of these components, including the final project that the students need to do. I would keep all of these things in the future as well.",
+        "Professor Yang's ability to provide deep context for cutting-edge research papers was the most valuable facilitator, teaching us to critique and build upon existing network protocols. I strongly recommend keeping the quarterly project structure where we analyze real-world network datasets, as this is the best way to solidify theoretical knowledge.",
+        "I thought lectures were quite good. I appreciated that they were recorded. I also appreciated the effort that went into making the labs, especially the RDMA lab.",
+        "I think most of the topics were good as they covered",
+        "pre-lecture reading? I feel like I have most stuff learned during that process",
+        "I think the labs and homeworks were actually very well designed in helping really solidify knowledge from readings/lecture. I also really appreciate the lecture slides and recordings posted regularly on the website.",
+        "the slides and the homework themselves (research paper) were very helpful",
+        "Recording lectures, short but effective labs.",
+        "TAs and professor were very helpful in office hours.",
+        "Yes, recordings. When revising I could go back to them. I attended in person.",
+        "The professor and TAs were major facilitators in the course material delivery. Each lecture relied on a pre-reading to become familiar (but not an expert) in the topic that would be covered that day. TAs were active on the class forum and shared the assignment materials (for homework and lab). I would recommend keeping the pre-reading but possibly substitute some of the older papers with more recent publishes or point out the publish dates for the older papers given that some of the topics may have been superseded or replaced with different methods or ideas.",
+        "recorded lectures was nice",
+        "I really liked the quizes, homeworks and labs",
+        "I thought lectures were really engaging!",
+        "The homework assignments prepared me for the exams, and the exams were fair.",
+        "digestible readings each class (with some drops for when other courses get busy); manageable labs + HWs for important concepts; responsive TAs",
+        "I appreciate that the professor places such strong emphasis on explaining the full context and evolution of the material. I find this thorough approach to be very effective."
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "30/32 (93.75%)",
+        "mean": 4,
+        "std": 0.87,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "I learned lots of new material and it was useful for my applications.",
+        "The class was intellectually stimulating because it connected theory with real research problems. It could be even more engaging with a few more concrete examples or mini case studies to help anchor the concepts.",
+        "Reading the latest paper is enjoyable (ideas are so clever).",
+        "The papers were the best part of this course and tied into lecture well.",
+        "I thought this course was plenty stimulating. You get out what you put in. Try to understand the topics as an engineer/researcher over absorbing only what you need to know.",
+        "The content is good, and professor always give us good feedback when studying.",
+        "I found the class highly intellectually stimulating because we engaged with influential research papers that connect core networking concepts to real systems shaping today’s Internet. Exploring both the fundamentals and cutting-edge designs helped me appreciate how theory translates into large-scale, real-world deployments.",
+        "I think that one way to make this class more intellectually stimulating would be to cover the more theoretical aspects of computer networking. That being said, that requires a lot of math background, and that is not feasible for a class of this size.",
+        "The most intellectually stimulating aspect was the requirement to directly connect abstract network theory with the messy reality of real-world congestion and fault tolerance. To enhance this, incorporating more open-ended network security or protocol vulnerability challenges would further ignite research-level curiosity.",
+        "I liked that we read actual papers",
+        "I think the assignments and other stuff are stimulating.",
+        "The topics were all very deep and interesting, challenging you to really dig deep in the nuances of networking subjects.",
+        "Reading papers was interesting.",
+        "The challenge of the course made it stimulating.",
+        "The topics was nice",
+        "While the lectures were dense, the pre-readings helped introduce some definitions and concepts that were research-able outside of class. The lectures themselves benefited from the pre-readings greatly, but also could lead to questions that may be asked in class. I liked that towards the end the pre-reading questions submitted were turned into slides and topics to cover during lecture. I think there could be more live drawing of diagrams where appropriate to explain topology concepts, as following along with graphs made concepts more clear than some written explanations in the pre-reads.",
+        "lectures just felt like dense content that wasn't explained in depth. Could've been more motivation discussed",
+        "i wish we had more labs or things to do practical stuff",
+        "The papers we read are interesting, influential, and of good quality. Two directions of improvement: 1. The second lab assignment felt like filling in the blank, and I don't feel that I gained an understanding of RDMA from it. 2. The class was relatively unstructured, so I don't feel that I gained a comprehensive understanding of computer networks. For example, layer 2 technologies like MAC addressing were not discussed. I think the class would benefit from a textbook.",
+        "bridges the gap between theory, engineering design, and practice",
+        "I really enjoyed the mini-projects required in this course."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "27/32 (84.38%)",
+        "mean": 4.04,
+        "std": 0.9,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "30/32 (93.75%)",
+        "mean": 4.13,
+        "std": 0.78,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "I would say that it is a good class given you know you want to learn more about networks. Otherwise I learned very little more than I already learned in 356.",
+        "very useful",
+        "Very comprehensive. You will learn a lot and develop enough skills to do the network research.",
+        "Budget time before each lecture to read the papers and take notes in lecture because the tests are open note. Problem sets and practice exams are useful for studying -- labs are not. Do the labs ahead of the due date as instruction might be limited.",
+        "Take it! Especially with Dr. Yang. I do research in the physical layer and I've found it important to understand the rest of the OSI model. Even if you aren't doing research, the class teaches you to appreciate the internet and how it's grown from DARPANET to today...",
+        "It is a good class, and we can learn a lot from it!",
+        "It's definitely an interesting and intellectually stimulating course to take despite its difficulty :)",
+        "I think it's an OK course overall. You will read some good papers about networking, but do make sure that if you are taking this, you do not expect to do a lot of hands on hacking on networking stacks -- that will not be part of this course. That being said, you will pick up some good ideas about overall system design and about how this is done in practice.",
+        "good course",
+        "Pretty cool class! To be honest, if you haven't taken an undergraduate networks class, I would take that (356) first. You can succeed in this class without taking an undergraduate networks class, but I think I would've gained a lot more from taking 356 than taking this (because my fundamentals are weaker).",
+        "Only take this if you're very interested in networks",
+        "This course coverd lots of topic so the workload is kind of heavy? But I learned a lot",
+        "Do the readings!!",
+        "Start early",
+        "Readings 2x a week",
+        "Have a good understanding of the papers and you will be okay. This is more of a networking research class than a pure “how are networks implemented?” class.",
+        "Do take it, if you like networks.",
+        "This class is the correct class if you want to start a journey of being an expert in all parts of a network stack. This is not the class you want to take if you want to write software that utilizes networks. If you are familiar with some network topics or have used tools related to network management, then this class will take your foundational knowledge and greatly build upon it. If you have never interacted with common network components, then this class should be taken after a more basic class related to using sockets or PC networks. I recommend this class for any student that has a medium or stronger interest in computer-to-computer communications (this would include embedded or low-power computers) or data center design. I would not recommend this class to a student if they find understanding research papers difficult or desires primarily to have written software as deliverables.",
+        "Good for students interested in networks research topics.",
+        "This is a worthwhile class, but you would benefit from past experience in an introductory course.",
+        "Great stuff to know as a computer scientist/engineer. Xiaowei is very receptive and encouraging of asking questions",
+        "This course gives you a glimpse into the world of Networking and Research."
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "30/32 (93.75%)",
+        "mean": 3.53,
+        "std": 0.73,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "30/32 (93.75%)",
+        "mean": 5.53,
+        "std": 1.96,
+        "median": 5
+      }
+    }
+  ]
+}

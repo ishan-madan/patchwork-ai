@@ -1,0 +1,108 @@
+{
+  "course": "COMPUTER SCIENCE (TOP)",
+  "course_id": "COMPSCI-390-02",
+  "instructor": "Robert Duvall",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "deployment, testing, agents, git",
+        "Proper Git usage. how to use GitLab issues, tags, pipelines to properly organize / manage work. AI agents, real world app deployment via VCMs, Docker, logging. If you really take the time to do the course readings and experiment on your own you could learn a ton more no doubt",
+        "I learned how to actually create and deploy software in the real world (with a big focus on AI)- gitignore and gitattributes, basic security, use of docker, how to integrate and create AI agents.",
+        "Testing, software development practices, docker/kubernetes, prompting and working with LLMs",
+        "In depth discussion and work on Software Engineering as it is done in the industry. I learned about developing and deploying web apps, creating ai agents, Kubernetes, Docker, Security, CI/CD Pipelines. I learned more on how to program like an engineer.",
+        "I learned to work with docker files, CI/CD pipelines, AI agents (and techniques like system prompts), using API keys and .env secrets, and working with a VM. I also gained some exposure to different app architectures, licenses, and best practices with issues, branches, tags, etc. I overall gained better exposure to the best practices of modern software development.",
+        "I learned a lot about software development practices, this was the only CS class at Duke that taught me how to build a CI/CD pipeline, taught me about writing tests, and taught me how to build AI Agents. The workload was also very manageable, and I had the chance to work on projects that actually interested me. I would 100% recommend this class to anyone interested in AI and Software Engineering. It taught me how to think beyond code, provided me new insights on current topics in the technology world."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "allowing students to chose what topics to present each class",
+        "- The lab days were awesome for getting hands-on practice with the technology we were learning at that moment. I wish more classes at Duke did something similar - The fact that most assignments or projects were open ended and just had some requirements to meet allowed us to really customize and explore our interests which was refreshing for a Duke CS course. - allowing us to vote on which topic we wanted to learn next was really cool as well.",
+        "I liked the discussion based lectures. When we had a question, we could just yell it out. It made for a close class dynamic and contributed to an open, low stress learning environment.",
+        "I enjoyed the projects as they helped me better understand the topics we covered in class.",
+        "Professor Duvall made sure the course was very engaging, asking us topics we were interested in learning, then diving deeper on them. This made every class worth attending and fun.",
+        "The labs were for the most part well-scaffolded, such as the frontend template for the chatbot project and the basic AI agent, which gave us a foundation to build and experiment with greater complexity. The final project allowed most groups to apply their knowledge from throughout the course to a real-world project. We also learned how to embrace AI to assist the programming process.",
+        "The instructor was very supportive and accessible to answer any questions."
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "7/10 (70%)",
+        "mean": 4.14,
+        "std": 1.07,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "having seminar type discussions about recent tech developments and news",
+        "Class was fantastic as is, I'm not sure much more could be done to it to make it more stimulating.",
+        "We learn how to code in the computer science department, but not exactly how to create. We learn to write this algorithm, do this or to get this functionality, add this method, but we do not learn how to build a project from the ground up with every challenge and opportunity that comes with it. This class does that. Because of this, it was intellectually stimulating.",
+        "I learned new things about software development and got to try new techniques that I had not previously learned.",
+        "The projects with room for creativity made it stimulating. We were given the freedom to develop whatever we wanted with specific requirements, giving us the chance to learn different tech stacks we can also put on our resume.",
+        "Exposure to real-world tools like Docker and CI/CD was valuable. As the course improves, this exposure could be improved in terms of organization and richness.",
+        "Building software that actually interested me was very stimulating, and Professor Duvall is also very knowledgeable."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "7/10 (70%)",
+        "mean": 4.14,
+        "std": 1.07,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "7/10 (70%)",
+        "mean": 4.29,
+        "std": 0.95,
+        "median": 5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "it's fine, honestly probably as close to industry as a university course might get, but still quite far off tbh",
+        "I personally avoided Prof. Duvall's courses due to horror stories from reddit, ratemyprofessor, etc. After taking this course (mind you, it's more relaxed than 308 I'm sure) I wholeheartedly disagree with most of those reviews. If you actually care about learning CS/Software Engineering you should 100% be taking all the courses you can with Professor Duvall, I've learned more useful skills in this class alone than most of my CS degree (I'm a senior so that's saying something.) I think if your goal is to work in tech or just generally be a really good software engineer then taking the core CS classes and any electives you can with Prof. Duvall is the way to go.",
+        "TAKE IT. It isn't too much work, but you will not only learn how to create your own software project, but also how to integrate AI into your projects. We learn how to code in the computer science department, but not exactly how to create. We learn to write this algorithm, do this or to get this functionality, add this method, but we do not learn how to build a project from the ground up with every challenge and opportunity that comes with it. This class does that.",
+        "What you put in is what you get, and this course makes it easy to hit 2 birds with 1 stone. Take advantage of the course to learn important concepts you might need for Software Engineering interviews. Also take advantage of the projects to get impressive experiences you can put on your resume.",
+        "This course will likely evolve rapidly, as it was new this year. If the course maintains its key components, you will get valuable exposure to real-world tools and frameworks for software engineering that you may not have received in other classes, especially if you'd like to be a software engineer. This exposure is worthwhile, but don't expect to become an expert in any one framework. That said, the course was transparent about its horizontal approach and professor Duvall encouraged us to dive deeper into the topics that interested us. It may be helpful to try to incorporate your personal domain interests into the projects you pursue. This semester, the course granted the flexibility to do that, as long as we used the core software development techniques of the class.",
+        "Enjoy it, and make sure to actually put in work into your final project, because it will have an impact on your stakeholder(s)."
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "7/10 (70%)",
+        "mean": 2.14,
+        "std": 0.69,
+        "median": 2
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "7/10 (70%)",
+        "mean": 4.57,
+        "std": 1.51,
+        "median": 4
+      }
+    }
+  ]
+}
