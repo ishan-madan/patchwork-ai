@@ -1,0 +1,140 @@
+{
+  "course": "INTRODUCTION TO ALGORITHMS",
+  "course_id": "COMPSCI-531D-01D",
+  "instructor": "Kamesh Munagala",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "max flow, linear programming, dynamic programming",
+        "DP proofs, approaches to DP, reduction of network flow problems",
+        "dynamic programming , minmax problem, greedy algorithm",
+        "Assuming this section is for discussion: the application of the algorithmic concepts we learned in class, cool solutions to problems we skipped over in lecture, and runtime complexity concepts.",
+        "the ability of Mathematical proof",
+        "More applications and extensions of the main lecture",
+        "This was a discussion section for the Algorithms course. So, it covered the same topics.",
+        "Algorithm, analysis and design.",
+        "See first submission.",
+        "1. Network flow\n\n2. Greedy algorithms\n\n3. Dynamic Programming",
+        "Working through example problems, approaching new problems with knowledge of similar problems, approaching entirely new problems.",
+        "How to formulate real life problems as algorithmic ones, how to develop and algorithm and implement it in Python, how to reduce problems to algorithms already known.",
+        "Some more example questions",
+        "1. Utilizing various algorithms and fitting them for our needs. 2. New algorithms, such as mst and simplex. 3. Expected time calculation",
+        "I thought the discussion helped me learn ways to apply or modify known algorithms to solve a new problem that it wasn't intended to originally solve. Also, it helped me better understand some of the processes behind the algorithms and principles that followed them. They also really helped for the homeworks.",
+        "Develping algorithms to solve differnent problems. Analyzing time complexity of algorithms."
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "Very clear written notes and clear explanation",
+        "Videos online",
+        "we got recorded lecture and notes, but having sample test would be better.",
+        "The TAs did a great job at facilitating a constructive learning environment.",
+        "Good. yes",
+        "I think recording those sessions, just like the regular classes are recorded, would be a very good idea.",
+        "Homeworks",
+        "See first submission.",
+        "I think that the instructors did a good job connecting the coursework to the homework in order to ensure that students learned the material well.",
+        "I liked that the instructors would give us time during the discussion to work on problems individually before walking us through the answer.",
+        "For me, having the notes ahead of time in a pdf was helpful to follow along during the lectures.",
+        "Including sample questions is very good.",
+        "Lecture slides and textbook",
+        "I would keep the homeworks as 2 weeks instead of weekly",
+        "Each lecture is good and motivating. But it is better to talk about one concept in more detail for those who cannot understand one new concept quickly. So it is better to reduce the total number of contents to be taught in each lecture. Instead, pay more attention to the concepts (each spent more time to illustrate)"
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "29/39 (74.36%)",
+        "mean": 3.66,
+        "std": 0.9,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "proofs",
+        "hw is hard",
+        "Helped a lot for my understanding of algorithms",
+        "It will be better to have recordings so that when a student misses the recitation or wants to look back at the discussion, he will have access.",
+        "Again, covering more challenging problems, on par with the exam.",
+        "More TA demo, easier exam",
+        "See first submission.",
+        "More class participation would have been beneficial for my learning experience.",
+        "Walking through examples of problems that we talked about in class",
+        "I think conceptually the problems are challenging which made it stimulating.",
+        "n/a",
+        "Challenging but reasonable psets",
+        "I think if we moved faster it would have been better for me, but I know that's not practical",
+        "Reduce number of exams and homework. Be more lenient in grading. Even participation counts towards grade is better than so many exams and homeworks."
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "29/39 (74.36%)",
+        "mean": 3.59,
+        "std": 0.91,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "29/39 (74.36%)",
+        "mean": 4.14,
+        "std": 0.79,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "be prepared to write proofs",
+        "it is hard",
+        "Less Mathematical proofs. Pay more attention to the solution itself.",
+        "Prereview and have more discussions with peers",
+        "Take it.",
+        "Very advanced",
+        "See first submission.",
+        "This is a good course to review and expand upon algorithms knowledge.",
+        "The discussion sessions are pretty helpful, especially if you didn't fully understand the content of the lectures they are covering.",
+        "Make sure you really understand the examples in lecture and can do them on your own.",
+        "n/a",
+        "Take some time on the psets",
+        "If you want to learn the basics behind a lot of well known algorithms, this is a good course to learn that.",
+        "It's good to learn fundamental knowledge and insights into algorithm. But indeed it takes so much time."
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "29/39 (74.36%)",
+        "mean": 3.93,
+        "std": 0.96,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "29/39 (74.36%)",
+        "mean": 6.93,
+        "std": 2.56,
+        "median": 7
+      }
+    }
+  ]
+}

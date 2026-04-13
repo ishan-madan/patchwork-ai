@@ -1,0 +1,94 @@
+{
+  "course": "THEORY & ALG MACHINE LEARNING",
+  "course_id": "COMPSCI-671D-05D",
+  "instructor": "Alina Barnett",
+  "reviews": [
+    {
+      "question_number": 1,
+      "question": "What knowledge, methods, skills, insights, or ways of thinking did you develop in this course? Please describe three specific things you learned.",
+      "responses": [
+        "I didn't really attend the discussion sections.",
+        "1. I have learned various machine learning algorithms. 2. I have learned how the algorithms work and how to implement them. 3. I have learned how to tackle a real world problem through machine learning.",
+        "It was very useful I especially enjoyed the interpretability aspects of this class where most of ML is black box neural nets this class showed ways to still keep it interpretable which I liked.",
+        "knn, random forest, ml"
+      ]
+    },
+    {
+      "question_number": 2,
+      "question": "Reflecting on the overall learning environment of this class, in what ways did the instructor(s) and the structure or components of the course facilitate your learning? Are there specific course components or methods of instruction you’d keep for future years?",
+      "responses": [
+        "Instructors have given clear explanation of the content and give us a lot of practices in discussion.",
+        "i liked the overall larning environemnt it was useful and engaging to have TA led sessions too and the homewokrs were challenging but worth it zI would keep them for next year",
+        "all good"
+      ]
+    },
+    {
+      "question_number": 3,
+      "question": "The course was intellectually stimulating. It made me think in new ways, encouraged me to adopt different points of view, or challenged me to develop new skills.",
+      "ratings": {
+        "response_rate": "4/22 (18.18%)",
+        "mean": 4.25,
+        "std": 0.96,
+        "median": 4.5
+      }
+    },
+    {
+      "question_number": 4,
+      "question": "What made this class stimulating or how could it be more intellectually stimulating if it wasn’t?",
+      "responses": [
+        "This class is stimulating because of the various materials that I have never learned before.",
+        "The homeworks were the most challenging but also intellectually stimulating part especially the proofs which I am not very good at really made me think",
+        "all good"
+      ]
+    },
+    {
+      "question_number": 5,
+      "question": "Considering all components of the course (lectures, discussions, sections/labs, assessments, projects, course environment, etc), overall the course was",
+      "ratings": {
+        "response_rate": "4/22 (18.18%)",
+        "mean": 4.25,
+        "std": 0.96,
+        "median": 4.5
+      }
+    },
+    {
+      "question_number": 6,
+      "question": "Based on the effectiveness of instruction (clarity, expertise, enthusiasm, rigor, support, inspiration, etc), overall the instructor, Instructor(s), was",
+      "ratings": {
+        "response_rate": "4/22 (18.18%)",
+        "mean": 4.5,
+        "std": 0.58,
+        "median": 4.5
+      }
+    },
+    {
+      "question_number": 7,
+      "question": "What would you like to say about this course to a student who is considering taking it in the future?",
+      "responses": [
+        "I would recommend it.",
+        "I would recommend it",
+        "not easy"
+      ]
+    },
+    {
+      "question_number": 8,
+      "question": "The course was difficult.",
+      "ratings": {
+        "response_rate": "4/22 (18.18%)",
+        "mean": 4,
+        "std": 0.82,
+        "median": 4
+      }
+    },
+    {
+      "question_number": 9,
+      "question": "How many hours in a typical week did you spend on this course (outside of class meetings)?",
+      "ratings": {
+        "response_rate": "4/22 (18.18%)",
+        "mean": 7.75,
+        "std": 3.2,
+        "median": 9
+      }
+    }
+  ]
+}
