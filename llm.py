@@ -20,10 +20,24 @@ Environment variable required:
 export LITELLM_TOKEN="sk-xxxxxxxx"
 """
 
+
 import os
 import requests
 import csv
 import json
+import sys
+
+# Structured output for web frontend
+def send_output(message, msg_type="text"):
+    payload = {
+        "type": msg_type,
+        "content": message
+    }
+    print(json.dumps(payload), flush=True)
+
+def get_input(prompt=""):
+    send_output(prompt, "input_prompt")
+    return sys.stdin.readline().rstrip("\n")
 
 
 # --------------------------------------------------
@@ -110,6 +124,7 @@ def load_courses():
             courses[crse_id] = {
                 "crse_id": crse_id,
                 "subject": row.get("subject", "").strip(),
+                "subject_name": row.get("subject_lov_descr", "").strip(),
                 "catalog_nbr": row.get("catalog_nbr", "").strip(),
                 "title": row.get("course_title_long", "").strip(),
                 "description": descr[:500],
@@ -200,7 +215,16 @@ def load_courses():
 
 
 def get_unique_subjects(courses):
-    return sorted(set(c["subject"] for c in courses if c["subject"]))
+    subject_map = {}
+
+    for c in courses:
+        code = c.get("subject", "").strip()
+        name = c.get("subject_name", "").strip()
+
+        if code and code not in subject_map:
+            subject_map[code] = name if name else code  # fallback
+
+    return dict(sorted(subject_map.items()))
 
 
 
@@ -239,16 +263,43 @@ def courses_to_string(courses):
     Course ID: {c['crse_id']}
     Code: {c['subject']} {c['catalog_nbr']}
     Title: {c['title']}
-    Career: {c['career']}
     Units: {c['units']}
-    Grading: {c['grading']}
-    Attributes: {', '.join(c['attributes'])}
-    Terms Offered: {', '.join(set(c['terms_offered']))}
     Description: {c['description']}
     Prerequisites: {prereq if prereq else 'None'}
     Evaluation: {eval_summary}
     """)
     return "\n".join(formatted)
+
+def normalize_subject_choice(raw_subject, valid_subjects):
+    """
+    Ensures the subject returned by the LLM is a valid subject code.
+    Handles cases like:
+    - "COMPSCI (Computer Science)"
+    - "Computer Science"
+    - "COMPSCI"
+    """
+
+    if not raw_subject:
+        return None
+
+    raw_subject = raw_subject.strip()
+
+    # Case 1: Extract code before parentheses
+    if "(" in raw_subject:
+        raw_subject = raw_subject.split("(")[0].strip()
+
+    raw_upper = raw_subject.upper()
+
+    # Case 2: Direct match (COMPSCI)
+    if raw_upper in valid_subjects:
+        return raw_upper
+
+    # Case 3: Match by subject name
+    for code, name in valid_subjects.items():
+        if raw_subject.lower() == name.lower():
+            return code
+
+    return None
 
 
 # --------------------------------------------------
@@ -279,11 +330,11 @@ If you need more information:
 If ready to choose a subject (only after at least 4 questions):
 {{
     "decision": "choose_subject",
-    "subject": "<exact subject code from list>"
+    "subject": "<ONLY the subject code (e.g., COMPSCI). Do NOT include parentheses or full names>"
 }}
 
-Available subject codes:
-{', '.join(subject_list)}
+Available subject codes (with the actual full subject names for reference, but respond with the code only):
+{', '.join([f"{k} ({v})" for k, v in subject_list.items()])}
 """
 
 
@@ -300,7 +351,7 @@ When you are ready to recommend a course, but BEFORE finalizing the recommendati
 {{
     "decision": "check_prerequisites",
     "crse_id": "<crse_id>",
-    "reason": "<why you are considering this course>"
+    "reason": "Please ensure you meet the prerequisites for this course before enrolling. Here is the course information and prerequisites to help you determine if you are eligible to take this course."
 }}
 
 After the user confirms they have met the prerequisites, you will then output the final recommendation as before:
@@ -320,8 +371,10 @@ Courses:
 # MAIN CONVERSATION
 # --------------------------------------------------
 
+
+
 def run_advisor():
-    print("\n🎓 Duke AI Course Advisor\n")
+    send_output("\nDuke AI Course Advisor\n", "system")
 
     courses = load_courses()
     subjects = get_unique_subjects(courses)
@@ -333,35 +386,59 @@ def run_advisor():
     question_count = 0
     chosen_subject = None
 
+    waiting_for_llm = False
+
     # -------- STAGE 1: SUBJECT SELECTION --------
     while question_count < MAX_QUESTIONS:
+        # Notify frontend: waiting for LLM
+        if not waiting_for_llm:
+            send_output(True, "waiting")
+            waiting_for_llm = True
         response = ask_llm(messages)
+        # Notify frontend: done waiting
+        if waiting_for_llm:
+            send_output(False, "waiting")
+            waiting_for_llm = False
         try:
             parsed = json.loads(response)
         except:
-            print("Invalid JSON from LLM:")
-            print(response)
+            send_output("Invalid JSON from LLM:", "system")
+            send_output(response, "system")
             return
 
         if parsed["decision"] == "ask":
-            print("\nAdvisor:", parsed["question"])
-            user_input = input("You: ")
+            send_output(parsed["question"], "advisor")
+            user_input = get_input("")
             messages.append({"role": "assistant", "content": response})
             messages.append({"role": "user", "content": user_input})
             question_count += 1
         elif parsed["decision"] == "choose_subject":
             if question_count < 4:
-                print("\nAdvisor: Please ask at least 4 questions before making a recommendation.")
+                send_output("Please ask at least 4 questions before making a recommendation.", "advisor")
                 # Force LLM to ask more questions
                 messages.append({"role": "assistant", "content": response})
                 messages.append({"role": "user", "content": "Please ask me more questions before recommending a subject."})
                 continue
-            chosen_subject = parsed["subject"]
-            print(f"\n📚 Subject Selected: {chosen_subject}")
+
+            raw_subject = parsed.get("subject", "")
+            normalized_subject = normalize_subject_choice(raw_subject, subjects)
+
+            if not normalized_subject:
+                send_output("Invalid subject returned. Please select a valid subject code only.", "system")
+                messages.append({"role": "assistant", "content": response})
+                messages.append({"role": "user", "content": "Please return ONLY a valid subject code from the list."})
+                continue
+
+            chosen_subject = normalized_subject
+
+            send_output(
+                f"Subject Selected: {chosen_subject} ({subjects[chosen_subject]})",
+                "recommendation"
+            )
             break
 
     if not chosen_subject:
-        print("Unable to determine subject.")
+        send_output("Unable to determine subject.", "system")
         return
 
     # -------- STAGE 2: COURSE RECOMMENDATION --------
@@ -370,7 +447,7 @@ def run_advisor():
     ]
 
     if not subject_courses:
-        print("No courses found for that subject.")
+        send_output("No courses found for that subject.", "system")
         return
 
     course_text = courses_to_string(subject_courses)
@@ -389,13 +466,22 @@ def run_advisor():
 
     tried_courses = set()
 
+
     while True:
+        # Notify frontend: waiting for LLM
+        if not waiting_for_llm:
+            send_output(True, "waiting")
+            waiting_for_llm = True
         final_response = ask_llm(messages)
+        # Notify frontend: done waiting
+        if waiting_for_llm:
+            send_output(False, "waiting")
+            waiting_for_llm = False
         try:
             parsed = json.loads(final_response)
         except:
-            print("Invalid JSON in recommendation stage:")
-            print(final_response)
+            send_output("Invalid JSON in recommendation stage:", "system")
+            send_output(final_response, "system")
             return
 
         if parsed["decision"] == "check_prerequisites":
@@ -403,24 +489,26 @@ def run_advisor():
             reason = parsed.get("reason", "")
             match = next((c for c in subject_courses if c["crse_id"] == crse_id), None)
             if match:
-                print(f"\n🔎 Prerequisite Check for {match['subject']} {match['catalog_nbr']} — {match['title']}")
                 prereq = match.get("prerequisite", "")
                 if prereq:
-                    # Remove the 'Prerequisite:' or 'Prerequisites:' prefix for display
-                    import re
+                    send_output({
+                        "course": f"{match['subject']} {match['catalog_nbr']}",
+                        "title": match["title"],
+                        "units": match["units"],
+                        "career": match["career"],
+                        "reason": reason
+                    }, "course_card")
                     display_prereq = re.sub(r"^Prerequisite[s]?:\s*", "", prereq, flags=re.IGNORECASE)
-                    print(f"\nPrerequisites for this course: {display_prereq}")
+                    send_output(f"Prerequisites for this course: {display_prereq}", "system")
+                    prereq_met = get_input("Have you met these prerequisites? (yes/no): ").strip().lower()
                 else:
-                    print("\nNo prerequisites listed for this course.")
-                prereq_met = input("Have you met these prerequisites? (yes/no): ").strip().lower()
-                # Add user response to messages for LLM context
+                    send_output("No prerequisites listed for the potential course recommendation.", "system")
+                    prereq_met = "yes"
                 messages.append({"role": "assistant", "content": final_response})
                 messages.append({"role": "user", "content": f"I {'have' if prereq_met in ['yes','y'] else 'have not'} met the prerequisites."})
-                # Mark this course as tried regardless of user response
                 tried_courses.add(normalize_course_key(match))
                 if prereq_met not in ["yes", "y"]:
-                    print("\nAdvisor: You must meet the prerequisites before taking this course. Let's try another recommendation.")
-                    # Refresh the system prompt to exclude tried courses and include feedback
+                    send_output("You must meet the prerequisites before taking this course. Let's try another recommendation.", "advisor")
                     filtered_courses = [c for c in subject_courses if normalize_course_key(c) not in tried_courses]
                     course_text = courses_to_string(filtered_courses)
                     messages.append({
@@ -429,9 +517,8 @@ def run_advisor():
                     })
                     continue
             else:
-                print("Course ID:", crse_id)
-                print(reason)
-                # If we can't find the course, skip
+                send_output(f"Course ID: {crse_id}", "system")
+                send_output(reason, "system")
                 continue
 
         elif parsed["decision"] == "recommend":
@@ -439,28 +526,29 @@ def run_advisor():
             reason = parsed["reason"]
             match = next((c for c in subject_courses if c["crse_id"] == crse_id), None)
 
-            print("\n✅ Recommended Course\n")
+            send_output("Recommended Course", "recommendation")
             if match:
-                print(f"{match['subject']} {match['catalog_nbr']} — {match['title']}")
-                print(f"Units: {match['units']}")
-                print(f"Career: {match['career']}")
-                print("\nWhy this course?")
-                print(reason)
+                send_output({
+                    "course": f"{match['subject']} {match['catalog_nbr']}",
+                    "title": match["title"],
+                    "units": match["units"],
+                    "career": match["career"],
+                    "reason": reason
+                }, "course_card")
                 tried_courses.add(normalize_course_key(match))
             else:
-                print("Course ID:", crse_id)
-                print(reason)
+                send_output(f"Course ID: {crse_id}", "system")
+                send_output(reason, "system")
 
-            user_feedback = input("\nDo you want to take this course? (yes/no): ").strip().lower()
+            user_feedback = get_input("Do you want to take this course? (yes/no): ").strip().lower()
             if user_feedback in ["yes", "y"]:
-                print("\nThank you! Good luck with your studies.")
+                send_output("Thank you! Good luck with your studies.", "system")
                 break
             else:
-                print("\nAdvisor: Okay, let's try another recommendation. Please tell me why you don't want this course or what you would prefer instead.")
-                feedback = input("You: ")
+                send_output("Okay, let's try another recommendation. Please tell me why you don't want this course or what you would prefer instead.", "advisor")
+                feedback = get_input("")
                 messages.append({"role": "assistant", "content": final_response})
                 messages.append({"role": "user", "content": feedback})
-                # Refresh the system prompt to exclude tried courses and include feedback
                 filtered_courses = [c for c in subject_courses if normalize_course_key(c) not in tried_courses]
                 course_text = courses_to_string(filtered_courses)
                 messages.append({
