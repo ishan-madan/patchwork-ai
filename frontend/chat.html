@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - Patchwork AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-layout">
+    <div style="display: flex; justify-content: flex-end; align-items: center; padding: 1rem 2vw 0.2rem 2vw;">
+      <button id="end-chat-btn" class="end-btn" type="button">End Chat</button>
+    </div>
+    <div id="chat-area" class="chat-area"></div>
+    <form id="chat-form" class="chat-form" autocomplete="off">
+      <input id="chat-input" type="text" placeholder="Type your message..." autocomplete="off" required />
+      <button type="submit">Send</button>
+    </form>
+    <!-- Feedback Form Overlay -->
+    <div id="feedback-overlay" class="feedback-overlay side" style="display:none;">
+      <form id="feedback-form" class="feedback-form">
+        <h3>We value your feedback!</h3>
+        <label>Rate the system:</label>
+        <div class="star-rating">
+          <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+          <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+          <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+          <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+          <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+        </div>
+        <label for="recommend">How likely are you to recommend to a friend? (1-5)</label>
+        <select id="recommend" name="recommend" required>
+          <option value="">Select</option>
+          <option value="5">5 - Very Likely</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1 - Not Likely</option>
+        </select>
+        <label for="feedback-text">Additional feedback:</label>
+        <textarea id="feedback-text" name="feedback" rows="3" placeholder="Your comments..."></textarea>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="chat.js"></script>
+</body>
+</html>
