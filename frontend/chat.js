@@ -164,7 +164,7 @@ function hideThinking() {
 
 
 socket.on('connect', () => {
-  appendBubble('Connected to advisor.', 'system');
+  appendBubble('Connected to Patchwork AI advisor.', 'system');
 });
 
 
