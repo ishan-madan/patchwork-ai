@@ -46,9 +46,10 @@ function showQuestion(idx) {
     btn.textContent = q[optKey];
     btn.onclick = () => {
       answers[idx] = q[optKey];
-      nextBtn.style.display = 'block';
-      Array.from(optionsArea.children).forEach(b => b.disabled = true);
+      // Remove 'selected' from all buttons
+      Array.from(optionsArea.children).forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
+      nextBtn.style.display = 'block';
     };
     optionsArea.appendChild(btn);
   });
