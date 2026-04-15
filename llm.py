@@ -22,6 +22,11 @@ export LITELLM_TOKEN="sk-xxxxxxxx"
 
 
 import os
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # dotenv not installed, ignore
 import requests
 import csv
 import json
@@ -172,8 +177,8 @@ def load_courses():
         key = subj + catnum_nolett
         subjcat_to_crseid.setdefault(key, []).append(c["crse_id"])
 
-    # For each course, collect all matching eval files
-    evals_by_crse_id = {crse_id: [] for crse_id in courses}
+    # For each course, collect all matching eval files and attach to ALL instances (by subject+catalog_nbr, not just one crse_id)
+    evals_by_key = {}  # key: subj+catnum_nolett, value: list of evals
     if os.path.isdir(eval_dir):
         for fname in os.listdir(eval_dir):
             if fname.endswith(".json"):
@@ -181,9 +186,7 @@ def load_courses():
                     with open(os.path.join(eval_dir, fname), encoding="utf-8") as f:
                         eval_data = json.load(f)
                         base = fname.split(".")[0]
-                        # Remove trailing _2, _3, etc for matching
                         base_main = base.split("_")[0]
-                        # Normalize: extract subject and number, ignore trailing letters
                         m = re.match(r"([A-Za-z]+)([0-9]+)", base_main)
                         if m:
                             subj = m.group(1).upper()
@@ -191,25 +194,20 @@ def load_courses():
                             key = subj + catnum
                         else:
                             key = base_main.upper()
-                        matched = False
-                        if key in subjcat_to_crseid:
-                            for crse_id in subjcat_to_crseid[key]:
-                                evals_by_crse_id[crse_id].append(eval_data)
-                                matched = True
-                        # Fallback: try to match by crse_id in JSON
-                        if not matched and isinstance(eval_data, dict) and "crse_id" in eval_data:
-                            crse_id = eval_data["crse_id"]
-                            if crse_id in courses:
-                                evals_by_crse_id[crse_id].append(eval_data)
-                except Exception as e:
+                        if key not in evals_by_key:
+                            evals_by_key[key] = []
+                        evals_by_key[key].append(eval_data)
+                except Exception:
                     pass  # Ignore malformed eval files
 
-    # Attach aggregated evals to each course
-    for crse_id, eval_list in evals_by_crse_id.items():
-        if eval_list:
-            courses[crse_id]["evaluation"] = eval_list
-        else:
-            courses[crse_id]["evaluation"] = None
+    # Attach aggregated evals to every course instance with matching subject+catalog_nbr (all professors/sections)
+    for c in courses.values():
+        subj = c["subject"].replace(" ", "").upper()
+        catnum = str(c["catalog_nbr"]).replace(" ", "")
+        catnum_nolett = re.sub(r"[^0-9]", "", catnum)
+        key = subj + catnum_nolett
+        evals = evals_by_key.get(key, [])
+        c["evaluation"] = evals if evals else None
 
     return list(courses.values())
 
@@ -374,7 +372,7 @@ Courses:
 
 
 def run_advisor():
-    send_output("\nDuke AI Course Advisor\n", "system")
+    send_output("\nAdvising Session Started.\n", "system")
 
     courses = load_courses()
     subjects = get_unique_subjects(courses)
