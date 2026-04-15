@@ -35,9 +35,11 @@ DEFAULT_MODEL = "gpt-5-mini"
 DEFAULT_TIMEOUT_SEC = 30
 MAX_QUESTIONS = 5
 
+
 COURSE_FILE = "data/course_offerings.csv"
 ATTR_FILE = "data/course_attributes.csv"
 TERM_FILE = "data/terms_offered.csv"
+EVALS_DIR = "data/course_evaluations"
 
 
 # --------------------------------------------------
@@ -65,23 +67,30 @@ def ask_llm(messages, model=DEFAULT_MODEL):
         "messages": messages,
     }
 
-    resp = requests.post(
-        DUKE_CHAT_URL,
-        headers=headers,
-        json=payload,
-        timeout=DEFAULT_TIMEOUT_SEC,
-    )
-
-    if resp.status_code != 200:
-        raise RuntimeError(resp.text)
-
-    data = resp.json()
-    return data["choices"][0]["message"]["content"].strip()
+    last_exception = None
+    for attempt in range(2):
+        try:
+            resp = requests.post(
+                DUKE_CHAT_URL,
+                headers=headers,
+                json=payload,
+                timeout=DEFAULT_TIMEOUT_SEC,
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                return data["choices"][0]["message"]["content"].strip()
+            else:
+                last_exception = RuntimeError(resp.text)
+        except Exception as e:
+            last_exception = e
+    # If we get here, both attempts failed
+    raise last_exception
 
 
 # --------------------------------------------------
 # LOAD + MERGE COURSE DATA
 # --------------------------------------------------
+
 
 def load_courses():
     courses = {}
@@ -91,18 +100,26 @@ def load_courses():
         reader = csv.DictReader(f)
         for row in reader:
             crse_id = row["crse_id"]
-
+            descr = row.get("descrlong", "")
+            # Extract prerequisite from descrlong if present
+            import re
+            prereq = ""
+            m = re.search(r"(Prerequisite[s]?:.*)$", descr, re.IGNORECASE)
+            if m:
+                prereq = m.group(1).strip()
             courses[crse_id] = {
                 "crse_id": crse_id,
                 "subject": row.get("subject", "").strip(),
                 "catalog_nbr": row.get("catalog_nbr", "").strip(),
                 "title": row.get("course_title_long", "").strip(),
-                "description": row.get("descrlong", "")[:500],
+                "description": descr[:500],
                 "units": row.get("units_minimum", "").strip(),
                 "career": row.get("acad_career_lov_descr", "").strip(),
                 "grading": row.get("grading_basis_lov_descr", "").strip(),
                 "attributes": [],
-                "terms_offered": []
+                "terms_offered": [],
+                "evaluation": None,  # Will be filled in below
+                "prerequisite": prereq
             }
 
     # Load attributes
@@ -127,6 +144,58 @@ def load_courses():
                 if term:
                     courses[crse_id]["terms_offered"].append(term)
 
+    # Load and aggregate course evaluations (JSON files)
+    eval_dir = EVALS_DIR
+    # Map from (subject+catalog_nbr_no_letters) to crse_id
+    import re
+    subjcat_to_crseid = {}
+    for c in courses.values():
+        # Remove all spaces and trailing letters from catalog_nbr (e.g., 101L -> 101)
+        subj = c["subject"].replace(" ","").upper()
+        catnum = str(c["catalog_nbr"]).replace(" ","")
+        catnum_nolett = re.sub(r"[^0-9]", "", catnum)
+        key = subj + catnum_nolett
+        subjcat_to_crseid.setdefault(key, []).append(c["crse_id"])
+
+    # For each course, collect all matching eval files
+    evals_by_crse_id = {crse_id: [] for crse_id in courses}
+    if os.path.isdir(eval_dir):
+        for fname in os.listdir(eval_dir):
+            if fname.endswith(".json"):
+                try:
+                    with open(os.path.join(eval_dir, fname), encoding="utf-8") as f:
+                        eval_data = json.load(f)
+                        base = fname.split(".")[0]
+                        # Remove trailing _2, _3, etc for matching
+                        base_main = base.split("_")[0]
+                        # Normalize: extract subject and number, ignore trailing letters
+                        m = re.match(r"([A-Za-z]+)([0-9]+)", base_main)
+                        if m:
+                            subj = m.group(1).upper()
+                            catnum = m.group(2)
+                            key = subj + catnum
+                        else:
+                            key = base_main.upper()
+                        matched = False
+                        if key in subjcat_to_crseid:
+                            for crse_id in subjcat_to_crseid[key]:
+                                evals_by_crse_id[crse_id].append(eval_data)
+                                matched = True
+                        # Fallback: try to match by crse_id in JSON
+                        if not matched and isinstance(eval_data, dict) and "crse_id" in eval_data:
+                            crse_id = eval_data["crse_id"]
+                            if crse_id in courses:
+                                evals_by_crse_id[crse_id].append(eval_data)
+                except Exception as e:
+                    pass  # Ignore malformed eval files
+
+    # Attach aggregated evals to each course
+    for crse_id, eval_list in evals_by_crse_id.items():
+        if eval_list:
+            courses[crse_id]["evaluation"] = eval_list
+        else:
+            courses[crse_id]["evaluation"] = None
+
     return list(courses.values())
 
 
@@ -134,22 +203,51 @@ def get_unique_subjects(courses):
     return sorted(set(c["subject"] for c in courses if c["subject"]))
 
 
+
+def summarize_evaluation(eval_data):
+    if not eval_data:
+        return "No evaluation data available."
+    # If multiple evals, aggregate
+    evals = eval_data if isinstance(eval_data, list) else [eval_data]
+    ratings = []
+    comments = []
+    for ed in evals:
+        if isinstance(ed, dict):
+            if "average_rating" in ed:
+                try:
+                    ratings.append(float(ed["average_rating"]))
+                except Exception:
+                    pass
+            if "comments" in ed and isinstance(ed["comments"], list):
+                comments.extend(ed["comments"])
+    summary = []
+    if ratings:
+        avg_rating = sum(ratings) / len(ratings)
+        summary.append(f"Average Rating (across {len(ratings)} evals): {avg_rating:.2f}")
+    if comments:
+        # Show up to 2 sample comments
+        for i, comment in enumerate(comments[:2], 1):
+            summary.append(f"Comment {i}: {comment}")
+    return " ".join(summary) if summary else "No evaluation data available."
+
 def courses_to_string(courses):
     formatted = []
-
     for c in courses:
+        eval_summary = summarize_evaluation(c.get("evaluation"))
+        prereq = c.get("prerequisite", "")
         formatted.append(f"""
-Course ID: {c['crse_id']}
-Code: {c['subject']} {c['catalog_nbr']}
-Title: {c['title']}
-Career: {c['career']}
-Units: {c['units']}
-Grading: {c['grading']}
-Attributes: {", ".join(c['attributes'])}
-Terms Offered: {", ".join(set(c['terms_offered']))}
-Description: {c['description']}
-""")
-
+    Course ID: {c['crse_id']}
+    Code: {c['subject']} {c['catalog_nbr']}
+    Title: {c['title']}
+    Career: {c['career']}
+    Units: {c['units']}
+    Grading: {c['grading']}
+    Attributes: {', '.join(c['attributes'])}
+    Terms Offered: {', '.join(set(c['terms_offered']))}
+    Description: {c['description']}
+    Prerequisites: {prereq if prereq else 'None'}
+    Evaluation: {eval_summary}
+    """)
     return "\n".join(formatted)
 
 
@@ -189,17 +287,28 @@ Available subject codes:
 """
 
 
+
 def build_recommendation_prompt(course_text):
-        return f"""
+    return f"""
 Based on the student's previous answers and any feedback about previous recommendations,
 choose the BEST course from the list below. If the student rejected a previous course, do NOT recommend it again and use their feedback to improve your next suggestion.
 
-Respond ONLY in JSON:
+You have access to course evaluation data for each course (see the 'Evaluation' field). Use this data to help determine if a course fits the student's needs and preferences. For example, if a student wants a highly rated course or cares about student feedback, use the evaluation data to inform your recommendation.
+
+When you are ready to recommend a course, but BEFORE finalizing the recommendation, output the following JSON to the terminal:
+
+{{
+    "decision": "check_prerequisites",
+    "crse_id": "<crse_id>",
+    "reason": "<why you are considering this course>"
+}}
+
+After the user confirms they have met the prerequisites, you will then output the final recommendation as before:
 
 {{
     "decision": "recommend",
     "crse_id": "<crse_id>",
-    "reason": "<clear explanation tied to the student's goals and feedback>"
+    "reason": "<clear explanation tied to the student's goals, feedback, and the course evaluation data>"
 }}
 
 Courses:
@@ -271,7 +380,14 @@ def run_advisor():
         "content": build_recommendation_prompt(course_text)
     })
 
-    rejected_courses = set()
+    import re
+    def normalize_course_key(course):
+        subj = course["subject"].replace(" ","").upper()
+        catnum = str(course["catalog_nbr"]).replace(" ","")
+        catnum_nolett = re.sub(r"[^0-9]", "", catnum)
+        return subj + catnum_nolett
+
+    tried_courses = set()
 
     while True:
         final_response = ask_llm(messages)
@@ -282,7 +398,43 @@ def run_advisor():
             print(final_response)
             return
 
-        if parsed["decision"] == "recommend":
+        if parsed["decision"] == "check_prerequisites":
+            crse_id = parsed["crse_id"]
+            reason = parsed.get("reason", "")
+            match = next((c for c in subject_courses if c["crse_id"] == crse_id), None)
+            if match:
+                print(f"\n🔎 Prerequisite Check for {match['subject']} {match['catalog_nbr']} — {match['title']}")
+                prereq = match.get("prerequisite", "")
+                if prereq:
+                    # Remove the 'Prerequisite:' or 'Prerequisites:' prefix for display
+                    import re
+                    display_prereq = re.sub(r"^Prerequisite[s]?:\s*", "", prereq, flags=re.IGNORECASE)
+                    print(f"\nPrerequisites for this course: {display_prereq}")
+                else:
+                    print("\nNo prerequisites listed for this course.")
+                prereq_met = input("Have you met these prerequisites? (yes/no): ").strip().lower()
+                # Add user response to messages for LLM context
+                messages.append({"role": "assistant", "content": final_response})
+                messages.append({"role": "user", "content": f"I {'have' if prereq_met in ['yes','y'] else 'have not'} met the prerequisites."})
+                # Mark this course as tried regardless of user response
+                tried_courses.add(normalize_course_key(match))
+                if prereq_met not in ["yes", "y"]:
+                    print("\nAdvisor: You must meet the prerequisites before taking this course. Let's try another recommendation.")
+                    # Refresh the system prompt to exclude tried courses and include feedback
+                    filtered_courses = [c for c in subject_courses if normalize_course_key(c) not in tried_courses]
+                    course_text = courses_to_string(filtered_courses)
+                    messages.append({
+                        "role": "system",
+                        "content": build_recommendation_prompt(course_text)
+                    })
+                    continue
+            else:
+                print("Course ID:", crse_id)
+                print(reason)
+                # If we can't find the course, skip
+                continue
+
+        elif parsed["decision"] == "recommend":
             crse_id = parsed["crse_id"]
             reason = parsed["reason"]
             match = next((c for c in subject_courses if c["crse_id"] == crse_id), None)
@@ -294,6 +446,7 @@ def run_advisor():
                 print(f"Career: {match['career']}")
                 print("\nWhy this course?")
                 print(reason)
+                tried_courses.add(normalize_course_key(match))
             else:
                 print("Course ID:", crse_id)
                 print(reason)
@@ -303,13 +456,12 @@ def run_advisor():
                 print("\nThank you! Good luck with your studies.")
                 break
             else:
-                rejected_courses.add(crse_id)
                 print("\nAdvisor: Okay, let's try another recommendation. Please tell me why you don't want this course or what you would prefer instead.")
                 feedback = input("You: ")
                 messages.append({"role": "assistant", "content": final_response})
                 messages.append({"role": "user", "content": feedback})
-                # Refresh the system prompt to exclude rejected courses and include feedback
-                filtered_courses = [c for c in subject_courses if c["crse_id"] not in rejected_courses]
+                # Refresh the system prompt to exclude tried courses and include feedback
+                filtered_courses = [c for c in subject_courses if normalize_course_key(c) not in tried_courses]
                 course_text = courses_to_string(filtered_courses)
                 messages.append({
                     "role": "system",
